@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ExcelSheetsToPDF-pkg-unpac", # Replace with your own username
-    version="0.1.0",
+    version="0.1.6",
     author="YEONJU JUNG",
     author_email="unpac.tech@gmail.com",
     description="transform excel file sheets save each pdf file",

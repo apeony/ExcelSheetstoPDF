@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[8]:
+
+
+#!/usr/bin/env python
+# coding: utf-8
+
 # In[22]:
 
 
@@ -35,7 +41,8 @@ def open():
     counting=len(ws_names)
     flocation=floce[0]
     
-
+    forname=onlyname
+    filename=onlyname.replace(' ','_')
   
 
 button01= tk.Button(root, text='파일열기', command=open,font=("Arial 16 bold"),width=40,height=2,fg="black",bg="yellow")
@@ -51,7 +58,16 @@ def sheetsepertion():
     onlyname=Path(root.filename).stem
     counting=len(ws_names)
     flocation=floce[0]
+    forname=onlyname
+    filename=onlyname.replace(' ','_')
     
+    print(info)
+    sheetname=[]
+    for j in info:
+        data=j.replace(' ','_')
+        sheetname.append(data)
+        
+    print(sheetname.append(data),sheetname)
     
     excel = client.Dispatch("Excel.Application")
     excel.Visible=False
@@ -61,7 +77,7 @@ def sheetsepertion():
      
         sheets = excel.Workbooks.Open(root.filename) #파일 읽어오고
         work_sheets = sheets.Worksheets[i] 
-        work_sheets.ExportAsFixedFormat(0, flocation+"/"+info[i]+"_"+onlyname+".pdf")
+        work_sheets.ExportAsFixedFormat(0, flocation+"/"+sheetname[i]+"_"+filename+".pdf")
         i +=1
         excel.Quit()
     
@@ -115,10 +131,6 @@ button06.pack(side="top",pady=0)
 
 
 root.mainloop()
-
-
-# In[ ]:
-
 
 
 
